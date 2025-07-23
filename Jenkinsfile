@@ -22,7 +22,7 @@ pipeline {
 
         stage('Test'){
             steps{
-                echo 'test build'
+                'test -f dist/index.html'
             }
         }
     }

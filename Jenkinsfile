@@ -16,15 +16,16 @@ pipeline {
                 npm --version
                 npm ci
                 npm run build
+                echo "== Build output =="
+                ls -R
                 '''
             }
         }
 
-        stage('Test'){
-            steps{
-                'test -f dist/index.html'
+        stage('Test') {
+            steps {
+                sh 'test -f dist/index.html'
             }
         }
     }
 }
-
